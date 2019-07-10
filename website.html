@@ -8,35 +8,96 @@
   <body>
     <h1>Traveling with Kendall</h1>
 
-    <h2>About us!</h2>
+<style>
+.tab {
+  overflow: hidden;
+  broder: 1 px solid #ccc;
+  background-color: #flflfl;
+}
 
-    Hi, my name is Kendall Hall! I am going to be a junior at San Ramon Valley High School in the fall. I enjoy traveling and playing tennis. Here on my website you will be able to see my favorite places and get travel recommendations!
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none'
+  cursor: pointer;
+  padding: 14px 16px:
+  transition: 0.3s;
+  font-size: 17px;
+}
 
-    <h2> Photos!</h2>
-    <p> Here you can see photos from places I have traveled to!</p>
-    <img src="IMG_2418.JPG">
-    <img src="IMG_0827.JPG">
-    <img src="IMG_3969.JPG">
-    <br><span class="Barcelona">Barcelona</span>
-    <span class="Puerto">
-       Puerto Vallarta
-    </span>
-    <span class="Whistler">
-      Whistler
-    </span>
-    <h2> Favorite destinations!</h2>
+.tab button: hover {
+  background-color: #ddd;
+}
 
+.tab button.active {
+  background-color: #ccc;
+}
 
-    <a href= "https://www.tripadvisor.com/"> Click here for travel reviews!</a>
-    <Title>Traveling with Kendall</Title>
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border 1px solid #ccc;
+  border-top: none;
+}
+</style>
 
-  <br>
-    <script>
-        function visitPage(){
-            window.location='http:/www.kayak.com';
-        }
-    </script>
-    <button onclick="visitPage();">Visit Kayak now to plan your trip!</button>
-  </body>
+<div class = "tab">
+  <button class="tablinks" onclick="openInfo (event, 'About Me!')">About Me!</button>
+  <button class="tablinks" onclick="openInfo(event, 'Photos')">Photos</button>
+  <button class="tablinks" onclick="openInfo(event,'Favorites')">Favorites</button>
+</div>
+
+<div id="About Me!" class="tabcontent">
+  <h3>About Me!</h3>
+  <p> Hi, my name is Kendall Hall! I am going to be a junior at San Ramon Valley High School in the fall. I enjoy traveling and playing tennis. Here on my website you will be able to see my favorite places and get travel recommendations!</p>
+</div>
+
+<div id="Photos" class="tabcontent">
+  <h3>Photos</h3>
+  <p>Here are some photos from my travel!</p>
+  <p> Here you can see photos from places I have traveled to!</p>
+  <img src="IMG_2418.JPG">
+  <img src="IMG_0827.JPG">
+  <img src="IMG_3969.JPG">
+  <br><span class="Barcelona">Barcelona</span>
+  <span class="Puerto">
+     Puerto Vallarta
+  </span>
+  <span class="Whistler">
+    Whistler
+  </span>
+</div>
+
+<div id="Favorites" class="tabcontent">
+  <h3>Favorites</h3>
+  <p>Here are some of my favorite places!</p>
+  <a href= "https://www.tripadvisor.com/"> Click here for travel reviews!</a>
+  <script>
+      function visitPage(){
+          window.location='http:/www.kayak.com';
+      }
+  </script>
+  <button onclick="visitPage();">Visit Kayak now to plan your trip!</button>
+</div>
+
+<script>
+function openInfo(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+    
+</body>
 
 </html>
