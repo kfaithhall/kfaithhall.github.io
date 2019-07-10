@@ -30,15 +30,13 @@
     <a href= "https://www.tripadvisor.com/"> Click here for travel reviews!</a>
     <Title>Traveling with Kendall</Title>
 
-    <p>Click the button for more information!</p>
-    <button onclick="buttonfuction()">Click here!</button>
+  <br>
     <script>
-      function buttonfuction() {
-        var para = document.createElement("BUTTON");
-        para.innerText = "Go to www.kayak.com to plan your trip!";
-        document.body.appendChild(para);
-      }
+        function visitPage(){
+            window.location='http:/www.kayak.com';
+        }
     </script>
+    <button onclick="visitPage();">Visit Kayak now to plan your trip!</button>
   </body>
 
 </html>
